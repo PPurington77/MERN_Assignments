@@ -46,7 +46,7 @@ class Effect extends Card {
 
     playHardAlgo(target) {
         if(target instanceof Unit) {
-            target.resilience += 3;
+            target.resilience += this.magnitude;
         }
         else {
             throw new Error("Target must be a unit");
@@ -55,7 +55,7 @@ class Effect extends Card {
 
     playuPR(target) {
         if(target instanceof Unit) {
-            target.resilience -= 2;
+            target.resilience -= this.magnitude;
         }
         else {
             throw new Error("Target must be a unit");
@@ -64,7 +64,7 @@ class Effect extends Card {
 
     playpP(target) {
         if(target instanceof Unit) {
-            target.power += 2;
+            target.power += this.magnitude;
         }
         else {
             throw new Error("Target must be a unit");
