@@ -13,6 +13,12 @@ const UserForm = (props) => {
     const [confirmPw, setConfirmPw] = useState("");
     const [confirmPwError, setConfirmPwError] = useState("");
 
+    const createUser = (e) => {
+        e.preventDefault();
+        const newUser = { firstName, lastName, email, password, confirmPw };
+        console.log("Welcome", newUser);
+    }
+
     //if fn or ln is less than 2 output saying field must be at least 2 characters
     const handleFirstName = (e) => {
         setFirstName(e.target.value);
@@ -74,7 +80,7 @@ const UserForm = (props) => {
 
     return(
         <div>
-            <form onSubmit={ (e) => e.preventDefault() }>
+            <form onSubmit={ createUser }>
                 <div>
                     <label>First Name:</label>
                     <input type="text" onChange={ handleFirstName } value={ firstName }/>
