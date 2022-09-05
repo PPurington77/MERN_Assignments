@@ -1,6 +1,7 @@
 
 import './App.css';
 import React, { useState } from 'react';
+import Todo from './components/Todo';
 
 function App() {
   const [newTodo, setNewTodo] = useState("");
@@ -64,26 +65,7 @@ function App() {
 
       {
         todos.map((todo, i) => {
-          const todoClasses = [];
-
-          if(todo.complete) {
-            todoClasses.push("line-through");
-          }
-
-          return(
-            <div key={i}>
-
-              <span className={todoClasses.join(" ")}>{todo.text}</span>
-              <input onChange={(e) => {
-                handleTodoToggle(i);
-              }}
-              checked={todo.complete} type="checkbox"/>
-              <button onClick={(e) => {
-                handleTodoDelete(i);
-              }} 
-              style={{ backgroundColor: "red", color: "white", padding: "5px 10px", margin: "10px", borderRadius: "5px"}}>Delete</button>
-            </div>
-          );
+          return <Todo key={i} todo={todo} handleTodoToggle={handleTodoToggle} i={i} handleTodoDelete={handleTodoDelete}/>;
         })}
     </div>
   );
