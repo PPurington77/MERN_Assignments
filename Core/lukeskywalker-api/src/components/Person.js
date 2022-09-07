@@ -20,7 +20,12 @@ const Person = (props) => {
     }, [id]);
 
     if(person === null) {
-        return "These are not the droids you are looking for"
+        return(
+            <div>
+                <p>"These are not the droids you are looking for"</p>
+                <img src='./image/obw.jpg' alt='obi wan '/>
+            </div>
+            ) 
     }
 
     return(
