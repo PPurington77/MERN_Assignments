@@ -1,0 +1,10 @@
+.formBody {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.label {
+    margin: 0 10px;
+}

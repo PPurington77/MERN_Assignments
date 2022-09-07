@@ -25,15 +25,15 @@ const Form = (props) => {
     }
 
     return (
-        <div>
+        <div className='formBody'>
             <form onSubmit={ onSubmitHandleSearch }>
-                <lable>Search For:</lable>
+                <lable className='label'>Search For:</lable>
                 <select value={ option } onChange={ onChangeHandleOption }>
                     <option value="people">People</option>
                     <option value="planets">Planets</option>
                 </select>
 
-                <lable>ID:</lable>
+                <lable className='label'>ID:</lable>
                 <input type="number" value={ id }/>
 
                 <input type="submit" value="Search" onChange={ onChangeHandleId }/>

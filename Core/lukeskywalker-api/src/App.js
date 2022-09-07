@@ -6,8 +6,10 @@ import Form from './components/Form';
 
 function App() {
   return (
-    <div>
-      <Form/>
+    <div className='body'>
+      <div>
+        <Form/>
+      </div>
     </div>
   );
 }
