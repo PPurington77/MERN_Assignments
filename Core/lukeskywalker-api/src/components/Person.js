@@ -4,7 +4,7 @@ import axios from 'axios';
 import './style.css';
 
 const Person = (props) => {
-    const [person, setPerson] = useState([]);
+    const [person, setPerson] = useState(null);
     //matches to id in the route
     const { id } = useParams();
 
@@ -18,6 +18,10 @@ const Person = (props) => {
                 console.log(err)
             })
     }, [id]);
+
+    if(person === null) {
+        return "These are not the droids you are looking for"
+    }
 
     return(
         <div className='result'>

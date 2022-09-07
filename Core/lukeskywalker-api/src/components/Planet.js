@@ -4,7 +4,7 @@ import axios from 'axios';
 import './style.css';
 
 const Planet = (props) => {
-    const [planet, setPlanet] = useState([]);
+    const [planet, setPlanet] = useState(null);
     //matches to id in the route
     const { id } = useParams();
 
@@ -18,6 +18,10 @@ const Planet = (props) => {
                 console.log(err)
             })
     }, [id]);
+
+    if(planet === null) {
+        return "These are not the droids you are looking for"
+    }
 
     return(
         <div className='result'>
