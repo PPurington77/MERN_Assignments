@@ -8,3 +8,11 @@
 .label {
     margin: 0 10px;
 }
+
+input {
+    margin: 0 5px;
+}
+
+.result {
+    margin: 50px 10px;
+}
