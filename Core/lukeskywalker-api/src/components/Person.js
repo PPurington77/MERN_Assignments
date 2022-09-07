@@ -19,15 +19,6 @@ const Person = (props) => {
             })
     }, [id]);
 
-    if(person === null) {
-        return(
-            <div>
-                <p>"These are not the droids you are looking for"</p>
-                <img src='./image/obw.jpg' alt='obi wan '/>
-            </div>
-            ) 
-    }
-
     return(
         <div className='result'>
             <h1>Name: { person.name }</h1>

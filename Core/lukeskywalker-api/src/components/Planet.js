@@ -19,15 +19,6 @@ const Planet = (props) => {
             })
     }, [id]);
 
-    if(planet === null) {
-        return(
-            <div>
-                <p>"These are not the droids you are looking for"</p>
-                <img src='./image/obw.jpg' alt='obi wan '/>
-            </div>
-            ) 
-    }
-
     return(
         <div className='result'>
             <h1>Name: { planet.name }</h1>
