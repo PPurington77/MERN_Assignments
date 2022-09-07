@@ -3,8 +3,8 @@ import { useParams } from 'react-router';
 import axios from 'axios';
 import './style.css';
 
-const Planet = (props) => {
-    const [planet, setPlanet] = useState(null);
+const Planet = () => {
+    const [planet, setPlanet] = useState("");
     //matches to id in the route
     const { id } = useParams();
 
@@ -19,13 +19,15 @@ const Planet = (props) => {
             })
     }, [id]);
 
+    const { name, climate, population, terrain, surface_water} = planet;
+
     return(
         <div className='result'>
-            <h1>Name: { planet.name }</h1>
-            <h4>Climate: { planet.climate }</h4>
-            <h4>Population: { planet.population }</h4>
-            <h4>Terrain: { planet.terrain }</h4>
-            <h4>Surface Water: { planet.surface_water }</h4>
+            <h1>Name: { name }</h1>
+            <h4>Climate: { climate }</h4>
+            <h4>Population: { population }</h4>
+            <h4>Terrain: { terrain }</h4>
+            <h4>Surface Water: { surface_water }</h4>
         </div>
     )
 }

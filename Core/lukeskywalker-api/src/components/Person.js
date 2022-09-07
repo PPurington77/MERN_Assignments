@@ -3,8 +3,8 @@ import { useParams } from 'react-router';
 import axios from 'axios';
 import './style.css';
 
-const Person = (props) => {
-    const [person, setPerson] = useState(null);
+const Person = () => {
+    const [person, setPerson] = useState("");
     //matches to id in the route
     const { id } = useParams();
 
@@ -19,13 +19,15 @@ const Person = (props) => {
             })
     }, [id]);
 
+    const { name, height, mass, hair_color, skin_color } = person;
+
     return(
         <div className='result'>
-            <h1>Name: { person.name }</h1>
-            <h4>Height: { person.height }</h4>
-            <h4>Mass: { person.mass }</h4>
-            <h4>Hair Color: { person.hair_color }</h4>
-            <h4>Skin Color: { person.skin_color }</h4>
+            <h1>Name: { name }</h1>
+            <h4>Height: { height }</h4>
+            <h4>Mass: { mass }</h4>
+            <h4>Hair Color: { hair_color }</h4>
+            <h4>Skin Color: { skin_color }</h4>
         </div>
     )
 }
