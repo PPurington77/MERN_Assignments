@@ -1,4 +1,5 @@
 const express = require('express');
+const { appendFile } = require('fs');
 const { handleCreateJoke, 
     handleGetAllJokes, 
     handleGetJokeById, 
@@ -19,3 +20,7 @@ router.put('/:id', handleUpdateJokeById);
 router.delete('/:id', handleDeleteJokeById);
 
 module.exports = { jokeRouter : router };
+
+app.listen(port, () =>
+    console.log(`Listening on port ${ port } for Req and Res`)
+);
