@@ -18,3 +18,6 @@ app.use(express.json());
 //adds api/jokes to beg of routes
 app.use('/api/jokes', jokeRouter);
 
+app.listen(port, () =>
+    console.log(`Listening on port ${ port } for Req and Res`)
+);
