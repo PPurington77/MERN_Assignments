@@ -8,7 +8,7 @@ export const NewJoke = (props) => {
     const [punchline, setPunchline] = useState('');
     const navigate = useNavigate;
     //for validations later
-    // const [errors, setErrors] = useState(null);
+    const [errors, setErrors] = useState(null);
 
     const handleNewJokeSubmit = (e) => {
         e.prevent.default();
@@ -27,12 +27,13 @@ export const NewJoke = (props) => {
             })
             .catch((error) => {
                 console.log(error);
+                return <h1>there was an error</h1> 
             })
     }
 
     return (
         <div className="w-50 p-4 m-3 rounded mx-auto shadow">
-            <form onSubmit={ handleNewJokeSubmit }>
+            <form onSubmit={ (e) => handleNewJokeSubmit(e) }>
                 <div className="form-group">
                     <label className="h6">
                         Set Up:
