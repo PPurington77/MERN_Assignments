@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Link, Navigate, Route, Routes } from 'react-router-dom';
+import { AllJokes } from './views/AllJokes'; //for specific import
+// import AllJokes from './views/AllJokes'; //for importing everthing
+import { OneJoke } from './views/OneJoke';
+import { NewJoke } from './views/NewJoke';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {/* navbar later */}
+      <Routes>
+        {/* Redirect Ex */}
+        <Route path="/" element={ < Navigate to="/jokes" replace /> } />
+        <Route path="/jokes" element={ <AllJokes /> } />
+        {/* <Route path="/jokes/:id/edit" element {<EditJoke /> } /> */}
+        <Route path="/jokes/new" element={ <NewJoke /> } />
+      </Routes>
     </div>
   );
 }
