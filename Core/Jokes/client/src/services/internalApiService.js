@@ -17,7 +17,7 @@ export const getJokeById = async (id) => {
 }
 
 export const createJoke = async (data) => {
-    const res = await http.post('/jokes');
+    const res = await http.post('/jokes', data);
     return res.data;
 }
 

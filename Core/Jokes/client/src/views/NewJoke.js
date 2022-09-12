@@ -10,10 +10,29 @@ export const NewJoke = (props) => {
     //for validations later
     // const [errors, setErrors] = useState(null);
 
+    const handleNewJokeSubmit = (e) => {
+        e.prevent.default();
+
+        const newJoke = {
+            //long hand if you want different key nam
+            setup: setup,
+            //short hand if key name = val name
+            punchline
+        };
+        createJoke(newJoke)
+            //if not using service data will be res.data
+            .then((data) => {
+                console.log('data', data);
+                navigate('/jokes');
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
 
     return (
         <div className="w-50 p-4 m-3 rounded mx-auto shadow">
-            <form>
+            <form onSubmit={ handleNewJokeSubmit }>
                 <div className="form-group">
                     <label className="h6">
                         Set Up:
@@ -30,6 +49,7 @@ export const NewJoke = (props) => {
                         setPunchline(e.target.value);
                     }} type="text" className="form-control"/>
                 </div>
+                <button className="btn btn-sm btn-outline-success mt-2">Submit</button>
             </form>
         </div>
     )
