@@ -8,15 +8,13 @@ export const NewJoke = (props) => {
     const [punchline, setPunchline] = useState('');
     const navigate = useNavigate;
     //for validations later
-    const [errors, setErrors] = useState(null);
+    // const [errors, setErrors] = useState(null);
 
-    const handleNewJokeSubmit = (e) => {
-        e.prevent.default();
+    const handleNewJokeSubmit = (event) => {
+        event.prevent.default();
 
         const newJoke = {
-            //long hand if you want different key nam
-            setup: setup,
-            //short hand if key name = val name
+            setup,
             punchline
         };
         createJoke(newJoke)
@@ -27,7 +25,6 @@ export const NewJoke = (props) => {
             })
             .catch((error) => {
                 console.log(error);
-                return <h1>there was an error</h1> 
             })
     }
 
