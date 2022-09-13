@@ -56,7 +56,7 @@ export const NewProduct = (props) => {
                     </label>
                     <input onChange={(e) => {
                         setDescription(e.target.value);
-                    }} type="number" className="form-control"/>
+                    }} type="text" className="form-control"/>
                 </div>
                 <button className="btn btn-sm btn-outline-success mt-2">Submit</button>
             </form>
