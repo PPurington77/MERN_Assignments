@@ -24,7 +24,7 @@ export const OneProduct = (props) => {
     const { title, price, description } = product;
 
     return (
-        <div className='w-100 mx-auto shadow mb-4 rounder border p-4'>
+        <div className='w-50 mx-auto shadow mb-4 rounder border p-4 text-center'>
             <h4>{ title }</h4>
             <h4>{ price }</h4>
             <h4>{ description }</h4>
