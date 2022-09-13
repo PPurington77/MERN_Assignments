@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import { getProductById, updateProductById } from '../services/internalApiService';
 
@@ -73,6 +73,7 @@ export const EditProduct = (props) => {
             </div>
             <button className="btn btn-sm btn-outline-success mt-2">Submit</button>
         </form>
+        <Link to={'/products'} className="btn btn-md btn-outline-primary mt-2 ">Back</Link>
     </div>
     )
 }
