@@ -10,7 +10,7 @@ export const NewProduct = (props) => {
     const [description, setDescription] = useState('');
     const navigate = useNavigate();
     //for validations later
-    // const [errors, setErrors] = useState(null);
+    const [errors, setErrors] = useState(null);
 
     const handleNewProductSubmit = (event) => {
         event.preventDefault();
@@ -30,6 +30,8 @@ export const NewProduct = (props) => {
             })
             .catch((error) => {
                 console.log(error);
+                // ? allows you to safely access keys that may not exist, instead of crashing the app if they don't it will return undefined.
+                setErrors(error?.response?.data?.errors);
             })
     }
 
@@ -40,6 +42,9 @@ export const NewProduct = (props) => {
                     <label className="h6">
                         Title:
                     </label>
+                    {errors?.title && (
+                        <span style={{ color: 'red' }}> { errors?.title?.message }</span>
+                    )}
                     <input onChange={(e) => {
                         setTitle(e.target.value);
                     }} type="text" className="form-control"/>
@@ -48,6 +53,9 @@ export const NewProduct = (props) => {
                     <label className="h6">
                         Price:
                     </label>
+                    {errors?.title && (
+                        <span style={{ color: 'red' }}> { errors?.price?.message }</span>
+                    )}
                     <input onChange={(e) => {
                         setPrice(e.target.value);
                     }} type="number" className="form-control"/>
@@ -56,6 +64,9 @@ export const NewProduct = (props) => {
                     <label className="h6">
                         Description:
                     </label>
+                    {errors?.title && (
+                        <span style={{ color: 'red' }}> { errors?.description?.message }</span>
+                    )}
                     <input onChange={(e) => {
                         setDescription(e.target.value);
                     }} type="text" className="form-control"/>
