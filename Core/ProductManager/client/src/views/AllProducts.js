@@ -23,6 +23,7 @@ export const AllProducts = (props) => {
 
             return <div key={ _id } className="shadow mb-4 rounded border p-4">
                 <h4>Name: <Link to={`/products/${ _id }`}>{ title }</Link></h4>
+                <Link to={ `/products/${ _id }/edit` } className="btn btn-sm btn-outline-warning mx-1">Edit</Link>
             </div>
         })}
     </div>

@@ -26,7 +26,7 @@ export const OneProduct = (props) => {
     return (
         <div className='w-50 mx-auto shadow mb-4 rounder border p-4 text-center'>
             <h4>{ title }</h4>
-            <h4>{ price }</h4>
+            <h4>${ price }</h4>
             <h4>{ description }</h4>
             <Link to="/products" className='btn btn-sm btn-outline-primary mx-1'>All Products</Link>
         </div>
