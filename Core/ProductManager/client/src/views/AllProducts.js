@@ -21,9 +21,9 @@ export const AllProducts = (props) => {
             const { _id, title, price, description } = product;
 
             return <div key={ _id } className="shadow mb-4 rounded border p-4">
-                <h4>{ title }</h4>
-                <h4>{ price }</h4>
-                <h4>{ description }</h4>
+                <h4>Name: { title }</h4>
+                <h4>Price: ${ price }</h4>
+                <h4>Description: { description }</h4>
             </div>
         })}
     </div>
