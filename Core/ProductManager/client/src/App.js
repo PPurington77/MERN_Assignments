@@ -1,5 +1,6 @@
 import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import OneProduct from './views/OneProduct';
 import Products from './views/Products';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       {/* Redirect Ex */}
       <Route path="/" element={ < Navigate to="/products" replace /> } />
       <Route path="/products" element={ <Products /> } />
+      <Route path="/products/:id" element={<OneProduct />} />
     </Routes>
   </div>
   );
