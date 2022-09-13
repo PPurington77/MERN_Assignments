@@ -6,17 +6,18 @@ import { createJoke } from '../services/internalApiService';
 export const NewJoke = (props) => {
     const [setup, setSetup] = useState('');
     const [punchline, setPunchline] = useState('');
-    const navigate = useNavigate;
+    const navigate = useNavigate();
     //for validations later
     // const [errors, setErrors] = useState(null);
 
     const handleNewJokeSubmit = (event) => {
-        event.prevent.default();
+        event.preventDefault();
 
         const newJoke = {
             setup,
             punchline
         };
+
         createJoke(newJoke)
             //if not using service data will be res.data
             .then((data) => {
