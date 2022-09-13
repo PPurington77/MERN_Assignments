@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAllProducts } from '../services/internalApiService';
+import { Link, useParams } from 'react-router-dom';
 
 export const AllProducts = (props) => {
     const [products, setProducts] = useState([]);
@@ -21,7 +22,7 @@ export const AllProducts = (props) => {
             const { _id, title } = product;
 
             return <div key={ _id } className="shadow mb-4 rounded border p-4">
-                <h4>Name: { title }</h4>
+                <h4>Name: <Link to={`/products/${ _id }`}>{ title }</Link></h4>
             </div>
         })}
     </div>

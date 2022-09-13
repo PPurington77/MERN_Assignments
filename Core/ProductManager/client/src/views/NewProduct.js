@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { createProduct } from '../services/internalApiService';
 
 export const NewProduct = (props) => {
+    const [products, setProducts] = useState([]);
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState(null);
     const [description, setDescription] = useState('');
@@ -24,7 +25,8 @@ export const NewProduct = (props) => {
             //if not using service data will be res.data
             .then((data) => {
                 console.log('data', data);
-                navigate('/products');
+                setProducts([...products, newProduct]);
+                navigate('/');
             })
             .catch((error) => {
                 console.log(error);

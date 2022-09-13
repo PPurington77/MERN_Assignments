@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getProductById } from '../services/internalApiService';
 
 export const OneProduct = (props) => {
@@ -28,6 +28,10 @@ export const OneProduct = (props) => {
             <h4>{ title }</h4>
             <h4>{ price }</h4>
             <h4>{ description }</h4>
+            <Link to="/products" className='btn btn-sm btn-outline-primary mx-1'>All Products</Link>
         </div>
+
     )
 }
+
+export default OneProduct;
