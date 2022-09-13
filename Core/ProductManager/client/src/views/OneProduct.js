@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getProductById } from '../services/internalApiService';
 
 export const OneProduct = (props) => {
     const [product, setProduct] = useState(null);
     const { id } = useParams();
-    const navigate = useNavigate;
 
     useEffect(() => {
         getProductById(id)
