@@ -11,7 +11,7 @@ export const EditProduct = (props) => {
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
 
-    // const [errors, setErrors] = useState(null);
+    const [errors, setErrors] = useState(null);
 
     useEffect(() => {
         getProductById(id)
@@ -41,6 +41,7 @@ export const EditProduct = (props) => {
             })
             .catch((error) => {
                 console.log(error);
+                setErrors(error?.response?.data?.errors);
             })
     };
 
@@ -51,6 +52,9 @@ export const EditProduct = (props) => {
                 <label className="h6">
                     Title:
                 </label>
+                {errors?.title && (
+                    <span style={{ color: 'red' }}> { errors?.title?.message }</span>
+                )}
                 <input onChange={(e) => {
                     setTitle(e.target.value);
                 }} type="text" className="form-control" value={ title }/>
@@ -59,6 +63,9 @@ export const EditProduct = (props) => {
                 <label className="h6">
                     Price:
                 </label>
+                {errors?.title && (
+                    <span style={{ color: 'red' }}> { errors?.price?.message }</span>
+                )}
                 <input onChange={(e) => {
                     setPrice(e.target.value);
                 }} type="number" className="form-control" value={ price }/>
@@ -67,6 +74,9 @@ export const EditProduct = (props) => {
                 <label className="h6">
                     Description:
                 </label>
+                {errors?.title && (
+                    <span style={{ color: 'red' }}> { errors?.description?.message }</span>
+                )}
                 <input onChange={(e) => {
                     setDescription(e.target.value);
                 }} type="text" className="form-control" value={ description }/>
