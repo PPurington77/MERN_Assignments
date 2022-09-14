@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { getAllAuthors  } from '../services/internalApiService';
-import { Link } from 'react-router-dom';
+import { deleteAuthorById, getAllAuthors  } from '../services/internalApiService';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const AllAuthors = (props) => {
     const [authors, setAuthors] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         getAllAuthors()
@@ -14,6 +15,17 @@ export const AllAuthors = (props) => {
                 console.log(error);
             })
     }, [])
+
+    const handleDeleteAuthorById = (idToDelete) => {
+        deleteAuthorById(idToDelete)
+            .then((deletedAuthor) => {
+                const filteredAuthors = authors.filter((author) => {
+                    return author._id !== idToDelete;
+                });
+                setAuthors(filteredAuthors);
+                navigate("/");
+            })
+    }
 
     return (
         <div className='w-70 mx-auto text-left'>
@@ -32,7 +44,7 @@ export const AllAuthors = (props) => {
                             return (
                                 <tr>
                                     <td key={ _id }>{ name }</td>
-                                    <td>Edit Delete</td>
+                                    <td><button onClick={(e) => {handleDeleteAuthorById(_id) } }className='btn btn-md btn-outline-danger mx-1'>Delete</button></td>
                                 </tr>
                             );
                         })}
