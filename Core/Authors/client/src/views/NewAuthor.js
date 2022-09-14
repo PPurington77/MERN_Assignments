@@ -5,7 +5,7 @@ import { createAuthor } from '../services/internalApiService';
 export const NewAuthor = (props) => {
     const [name, setName] = useState('');
     const navigate = useNavigate();
-    const [errors, setErrors] = (null);
+    const [errors, setErrors] = useState(null);
 
     const handleNewAuthorSubmit = (e) => {
         e.preventDefault();
@@ -33,7 +33,7 @@ export const NewAuthor = (props) => {
                         <span style={{ color: 'red' }}>{ errors?.name?.message }</span>
                     )}
                     <input onChange={(e) => {
-                        setName(e);
+                        setName(e.target.value);
                     }} type="text" className='form-control'/>
                 </div>
                 <button className='btn btn-sm btn-outline-success mt-2'>Create</button>
@@ -41,3 +41,5 @@ export const NewAuthor = (props) => {
         </div>
     )
 }
+
+export default NewAuthor;
