@@ -17,6 +17,7 @@ export const AllAuthors = (props) => {
 
     return (
         <div className='w-70 mx-auto text-left'>
+        <Link to="/authors/new" className='btn btn-sm btn-outline-primary mx-1'>Add New Author</Link>
             <h2 className='text-info'>We have quotes by:</h2>
             <table className='table text-center'>
                 <thead>
@@ -26,17 +27,15 @@ export const AllAuthors = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
                         {authors.map((author) => {
                             const { _id, name} = author;
                             return (
-                                <>
-                                <td key={ _id }>{ name }</td>
-                                <td>Edit Delete</td>
-                                </>
+                                <tr>
+                                    <td key={ _id }>{ name }</td>
+                                    <td>Edit Delete</td>
+                                </tr>
                             );
                         })}
-                    </tr>
                 </tbody>
             </table>
         </div>
