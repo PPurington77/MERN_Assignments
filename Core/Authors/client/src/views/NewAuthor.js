@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createAuthor } from '../services/internalApiService';
 
 export const NewAuthor = (props) => {
@@ -36,7 +36,8 @@ export const NewAuthor = (props) => {
                         setName(e.target.value);
                     }} type="text" className='form-control'/>
                 </div>
-                <button className='btn btn-sm btn-outline-success mt-2'>Create</button>
+                <button className='btn btn-md btn-outline-success mt-2 m-1'>Create</button>
+                <Link to="/authors" className='btn btn-md btn-outline-primary mt-2 m-1'>Cancel</Link>
             </form>
         </div>
     )
