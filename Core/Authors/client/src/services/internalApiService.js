@@ -24,7 +24,7 @@ export const updateAuthorById = async (id, data) => {
     return res.data;
 };
 
-export const deleteProductById = async (id) => {
-    const res = await http.delete(`products/${ id }`);
+export const deleteAuthorById = async (id) => {
+    const res = await http.delete(`authors/${ id }`);
     return res.data;
 };
