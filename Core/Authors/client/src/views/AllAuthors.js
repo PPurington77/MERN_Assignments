@@ -44,7 +44,10 @@ export const AllAuthors = (props) => {
                             return (
                                 <tr>
                                     <td key={ _id }>{ name }</td>
-                                    <td><button onClick={(e) => {handleDeleteAuthorById(_id) } }className='btn btn-md btn-outline-danger mx-1'>Delete</button></td>
+                                    <td>
+                                        <Link to={ `/authors/${ _id }/edit`} className='btn btn-md btn-outline-primary mx-1'>Edit</Link>
+                                        <button onClick={(e) => {handleDeleteAuthorById(_id) } }className='btn btn-md btn-outline-danger mx-1'>Delete</button>
+                                    </td>
                                 </tr>
                             );
                         })}
