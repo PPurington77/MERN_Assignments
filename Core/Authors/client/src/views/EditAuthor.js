@@ -51,7 +51,7 @@ export const EditAuthor = (props) => {
                     setName(e.target.value);
                 }} type="text" className='form-control' value={ name }/>
             </div>
-            <button className='btn btn-md btn-outline-success mt-2 m-1'>Create</button>
+            <button className='btn btn-md btn-outline-success mt-2 m-1'>Update</button>
             <Link to="/authors" className='btn btn-md btn-outline-primary mt-2 m-1'>Cancel</Link>
         </form>
     </div>
