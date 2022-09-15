@@ -12,6 +12,21 @@ const PlayerSchema = new mongoose.Schema(
         position: {
             type: String,
             required: [false]
+        },
+
+        playing: {
+            type: Boolean,
+            default: false
+        },
+
+        notPlaying: {
+            type: Boolean,
+            default: false
+        },
+
+        undecided: {
+            type: Boolean,
+            default: false
         }
     },
     {timestamps: true}
