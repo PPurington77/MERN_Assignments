@@ -26,6 +26,8 @@ export const NewAuthor = (props) => {
 
     return (
         <div className='w-50 p-4 m-3 rounded mx-auto shadow'>
+            <Link to="/authors">Home</Link>
+            <h3>Add a new author:</h3>
             <form onSubmit={ (e) => handleNewAuthorSubmit(e) }>
                 <div className='form-group'>
                     <label className='h6'>Name:</label>
